@@ -1,0 +1,1 @@
+MinGW∞Êµº»ÎlibQtSolutions_SOAP-head.aø‚
