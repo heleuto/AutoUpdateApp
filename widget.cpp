@@ -68,6 +68,7 @@ Widget::Widget(QWidget *parent) :
     connect(upThread,&MyThread::finished,upThread,&MyThread::deleteLater);
     connect(this,&QObject::destroyed,upThread,&MyThread::quit);//避免内存泄露   
     connect(ui->pushButton_3,&QPushButton::clicked,upThread,&MyThread::quit);
+    connect(upThread,&MyThread::dbOpenState,this,&Widget::showDbOpenState);
     upThread->start();
 
 }
