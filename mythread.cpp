@@ -15,11 +15,6 @@ MyThread::MyThread(QString name,QObject *parent):QThread (parent),mStop(false)/*
     alivenum =0;//心跳倒计时
 }
 
-MyThread::~MyThread()
-{
-
-}
-
 void MyThread::run()
 {
     bool ret = databaseInit();
