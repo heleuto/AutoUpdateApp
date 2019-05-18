@@ -11,7 +11,6 @@ class MyThread : public QThread
     Q_OBJECT
 public:
     MyThread(QString name="", QObject *parent =nullptr);
-    ~MyThread() override;
     volatile bool mStop;
 protected:
     void run() override;
