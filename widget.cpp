@@ -66,7 +66,7 @@ Widget::Widget(QWidget *parent) :
     QString name = sqlconnectName + QString::number(connectTimes);
     MyThread *upThread = new MyThread(name);//default
     connect(upThread,&MyThread::finished,upThread,&MyThread::deleteLater);
-    connect(this,&QObject::destroyed,upThread,&MyThread::deleteLater);//避免内存泄露   
+    connect(this,&QObject::destroyed,upThread,&MyThread::quit);//避免内存泄露   
     connect(ui->pushButton_3,&QPushButton::clicked,upThread,&MyThread::quit);
     upThread->start();
 
@@ -439,7 +439,7 @@ void Widget::on_pushButton_3_clicked()
     QString name = sqlconnectName + QString::number(connectTimes);
     MyThread *upThread = new MyThread(name);//重新创建数据库连接
     connect(upThread,&MyThread::finished,upThread,&MyThread::deleteLater);
-    connect(this,&QObject::destroyed,upThread,&MyThread::deleteLater);//避免内存泄露   
+    connect(this,&QObject::destroyed,upThread,&MyThread::quit);//避免内存泄露   
     connect(ui->pushButton_3,&QPushButton::clicked,upThread,&MyThread::quit);
     connect(upThread,&MyThread::dbOpenState,this,&Widget::showDbOpenState);
     connect(upThread,&MyThread::started,this,&Widget::setOkBtnEnable);//防止重复点击
