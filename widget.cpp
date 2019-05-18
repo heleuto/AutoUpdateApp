@@ -32,7 +32,7 @@ Widget::Widget(QWidget *parent) :
 
     lockStr = ui->unlockBtn->text();
     lockedBtns();
-    this->setWindowTitle(tr("文件柜后台更新配置"));
+    this->setWindowTitle(tr("后台更新配置"));
 
     QRegExp regx("[0-9]+$");
     QValidator* validator = new QRegExpValidator(regx, ui->mysql_portLineEdit);
