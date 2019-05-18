@@ -46,7 +46,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     img.qrc
 
-RC_ICON += Update.ico
+RC_ICONS = Update.ico
 
 
 win32: LIBS += -L$$PWD/lib/ -lQtSolutions_SOAP-head
