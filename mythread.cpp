@@ -83,9 +83,9 @@ void MyThread::keepAlive()
             request.setMethod("reader", "http://tempuri.org/");
             request.addMethodArgument("ssql", "", country);
 
-            http.setHost(Widget::WebService_addr,(int)Widget::WebService_port);
+            http.setHost(Widget::WebService_ip,(int)Widget::WebService_port);
             http.setAction("http://tempuri.org/reader");
-            http.submitRequest(request, "/myweb/WebService1.asmx");
+            http.submitRequest(request, Widget::WebService_addr/*"/myweb/WebService1.asmx"*/);
         }else{
             updated = false;
         }
