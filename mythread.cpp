@@ -71,7 +71,7 @@ void MyThread::keepAlive()
             }
         }
         time = QTime::currentTime();
-        if((time.hour() == 2 ))
+        if((time.hour() == Widget::update_time ))
         {
             if(updated) return;
             //开始更新
